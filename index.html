@@ -32,25 +32,15 @@
     }
 
     /* Optimasi Hero untuk Mobile */
-    .hero {
-    background: 
-        linear-gradient(
-            rgba(11, 15, 26, 0.85),
-            rgba(11, 15, 26, 0.85)
-        ),
-        url("img/logo_nama.jpeg");
-    
-    /* PENTING UNTUK MOBILE */
+ .hero {
+    background-image: linear-gradient(rgba(11, 15, 26, 0.85), rgba(11, 15, 26, 0.85)), url("img/logo_nama.jpeg");
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: cover !important; /* Memaksa gambar menutupi seluruh area */
-    
-    height: 100vh; /* Mengambil 100% tinggi layar */
-    width: 100%;
+    background-size: cover !important;
+    background-attachment: scroll !important; /* Ganti fixed jadi scroll khusus mobile */
+    min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 0;
-    position: relative;
 }
 
 /* Perbaikan untuk browser mobile yang punya address bar dinamis */
@@ -414,6 +404,7 @@ footer h6 {
 </script>
 </body>
 </html>
+
 
 
 
