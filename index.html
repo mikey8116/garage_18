@@ -33,22 +33,30 @@
 
     /* Optimasi Hero untuk Mobile */
  .hero {
-    background-image: linear-gradient(rgba(11, 15, 26, 0.85), rgba(11, 15, 26, 0.85)), url("img/logo_nama.jpeg");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover !important;
-    background-attachment: scroll !important; /* Ganti fixed jadi scroll khusus mobile */
+    /* Gunakan min-height agar selalu penuh setinggi layar HP */
     min-height: 100vh;
+    width: 100%;
+    
+    /* Pengaturan Background agar pas di tengah dan menutupi layar */
+    background: linear-gradient(rgba(11, 15, 26, 0.85), rgba(11, 15, 26, 0.85)), 
+                url("img/logo_nama.jpeg") center/cover no-repeat;
+    
     display: flex;
     align-items: center;
+    padding: 60px 0;
+    position: relative;
 }
 
-/* Perbaikan untuk browser mobile yang punya address bar dinamis */
 @media (max-width: 768px) {
     .hero {
-        background-attachment: scroll !important; /* Wajib scroll di HP */
-        height: -webkit-fill-available; /* Fix untuk Safari iOS */
-        min-height: 100vh;
+        /* Memaksa background tidak 'fixed' karena sering bermasalah di browser HP */
+        background-attachment: scroll !important;
+        /* Padding tambahan agar tombol tidak terlalu mepet ke bawah */
+        padding-bottom: 100px; 
+    }
+    
+    .hero h1 {
+        font-size: 1.75rem; /* Ukuran teks judul yang lebih pas untuk HP */
     }
 }
 
@@ -404,6 +412,7 @@ footer h6 {
 </script>
 </body>
 </html>
+
 
 
 
