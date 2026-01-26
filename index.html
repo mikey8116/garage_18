@@ -32,15 +32,15 @@
 
     /* Hero Section Final Optimization */
     .hero {
-        min-height: 100vh;
-        width: 100%;
-        background: linear-gradient(rgba(11, 15, 26, 0.85), rgba(11, 15, 26, 0.85)), 
-                    url("img/logo_nama.jpeg") center center / cover no-repeat;
-        display: flex;
-        align-items: center;
-        position: relative;
-        padding: 80px 0;
-    }
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 0;
+    /* Pastikan gambar background menutupi seluruh layar */
+    background-size: cover !important;
+    background-position: center !important;
+}
 
     @media (max-width: 768px) {
         .hero {
@@ -64,9 +64,18 @@
     .btn-yellow:hover { background: #d49b00; color: #000; }
 
     .btn-outline-yellow {
-        border: 1px solid #f5b400;
-        color: #f5b400;
-    }
+    border: 1px solid #f5b400;
+    color: #f5b400;
+    width: auto; /* Ubah dari 38px ke auto */
+    height: auto; /* Ubah dari 38px ke auto */
+    padding: 10px 25px; /* Beri ruang yang pas */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s;
+}
 
     .info-box {
         background: rgba(255, 255, 255, 0.05);
@@ -110,18 +119,15 @@
 
     /* Sosmed Footer Icons */
     .sosmed-icon {
-        width: 38px;
-        height: 38px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        transition: 0.3s;
-        border: 1px solid #f5b400;
-        color: #f5b400;
-        border-radius: 50%;
-        text-decoration: none;
-        margin-right: 8px;
-    }
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #f5b400;
+    color: #f5b400;
+    border-radius: 50%;
+}
 
     .sosmed-icon:hover {
         background: #f5b400;
@@ -241,16 +247,15 @@
             <div class="col-md-5">
                 <h6 class="fw-bold text-white mb-3 text-center text-md-start">Lokasi Akurat</h6>
                 <div class="map-container shadow-sm">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.583348398125!2d107.1154618173958!3d-6.832512566838323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6853519f96b3cf%3A0xebeded0b30b34ca6!2sGarage18!5e0!3m2!1sid!2sid!4v1716300000000!5m2!1sid!2sid" 
-                        width="100%" 
-                        height="450" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.643621437172!2d107.1246473!3d-6.813139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6853519f96b3cf%3A0xebeded0b30b34ca6!2sGarage18!5e0!3m2!1sid!2sid!4v1700000000000" 
+                            width="100%" 
+                            height="300" 
+                            style="border:0; border-radius: 12px;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
             </div>
         </div>
         <hr class="mt-4 mb-3 border-secondary">
@@ -295,4 +300,5 @@
 </script>
 </body>
 </html>
+
 
