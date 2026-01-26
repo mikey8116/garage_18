@@ -31,14 +31,27 @@
 
     /* Optimasi Hero untuk Mobile */
     .hero {
-        background: 
-            linear-gradient(
-                rgba(11, 15, 26, 0.85),
-                rgba(11, 15, 26, 0.85)
-            ),
-            url("img/logo_nama.jpeg") center / cover no-repeat;
-        padding: 80px 0; /* Mengurangi padding di mobile */
+    background: 
+        linear-gradient(
+            rgba(11, 15, 26, 0.85),
+            rgba(11, 15, 26, 0.85)
+        ),
+        url("img/logo_nama.jpeg") center / cover no-repeat;
+    
+    /* Menggunakan min-height agar mengikuti tinggi layar */
+    min-height: 100vh; 
+    display: flex;
+    align-items: center; /* Konten rata tengah secara vertikal */
+    padding: 80px 0;
+}
+
+/* Perbaikan khusus untuk mobile */
+@media (max-width: 768px) {
+    .hero {
+        background-attachment: scroll; /* Hindari 'fixed' di HP karena sering bug */
+        min-height: calc(100vh - 56px); /* Mengurangi tinggi navbar */
     }
+}
 
     @media (min-width: 768px) {
         .hero {
@@ -294,3 +307,4 @@
 </script>
 </body>
 </html>
+
